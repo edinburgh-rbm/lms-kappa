@@ -12,6 +12,7 @@ scalaVersion := "2.11.2"
 resolvers += "Sonatype Public" at "https://oss.sonatype.org/content/groups/public"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.0" % "test"
+
 libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.2"
 
 //--- End of Dependencies
