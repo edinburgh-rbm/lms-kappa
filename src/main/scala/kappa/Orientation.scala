@@ -186,6 +186,12 @@ object Orientation {
     Orientation(es(0), es(1), es(2))
   }
 
+  // serious brain damage
+  class DummyImplicitZ
+    object DummyImplicitZ {
+      implicit def dummyImplicit: DummyImplicitZ = new DummyImplicitZ
+    }
+
   /**
    * Factory method for constructing an [[Orientation]] from a 3x3
    * nested sequence of matrix coefficients (in column-major order).
@@ -194,7 +200,7 @@ object Orientation {
    *        rotation matrix in column-major order.
    */
   def apply(es: Seq[Seq[Double]])(
-    implicit e1: DummyImplicit, e2: DummyImplicit): Orientation = {
+    implicit e1: DummyImplicit, e2: DummyImplicitZ): Orientation = {
     Orientation(es map (Position(_)))
   }
 
